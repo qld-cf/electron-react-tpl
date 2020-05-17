@@ -1,0 +1,46 @@
+/**
+ * Umi 中约定 src/global.less 为全局样式
+ */
+@import './assets/style/bootstrap-part.less';
+@import './assets/style/common.less';
+
+:root {
+  --header-height: 64px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+}
+
+// 滚动条美化
+* {
+  &::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    // box-shadow: inset 0 0 5px rgba(99, 99, 99, .4);
+    background: rgba(161, 78, 255, 0.24); // 滑动条
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(99, 99, 99, 0.24);
+    border-radius: 2px;
+    background: #ededed; // 条背景
+  }
+}

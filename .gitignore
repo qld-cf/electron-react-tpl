@@ -1,0 +1,32 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/npm-debug.log*
+/yarn-error.log
+/yarn.lock
+package-lock.json
+
+# production
+**/dist
+
+# misc
+.DS_Store
+.idea
+.vscode
+.svn
+.npmrc
+.yarnrc
+
+# umi
+.umi
+.umi-production
+
+# 一些临时文件
+**/.tmp
+**/.umi
+
+# Electron 构建文件
+release
+src/main/bundle.js
+src/main/bundle.js.map

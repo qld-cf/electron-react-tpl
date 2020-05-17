@@ -1,0 +1,4 @@
+include:
+  - project: "arch-foundation/cicd"
+    ref: electron
+    file: "/templates/Electron.gitlab-ci.yml"

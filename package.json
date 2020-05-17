@@ -1,0 +1,106 @@
+{
+  "name": "electron-react-app",
+  "description": "{{description}}",
+  "author": "app",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "npm run electron:build && concurrently \"cross-env APP_ROOT=src/render umi dev\" \"wait-on http://localhost:9090 && electron .\"",
+    "dev:web": "cross-env TARGET=web APP_ROOT=src/render umi dev",
+    "dev:all": "concurrently -n=umi,electron -c=blue,green -p=[{name}] \"cross-env APP_ROOT=src/render umi dev\" \"wait-on http://localhost:9090 && electron .\"",
+    "build:web": "cross-env APP_ROOT=src/render umi build",
+    "---- webpack 构建 bundle.js electron-webpack ----": "---- webpack 构建 bundle.js ----",
+    "electron:build": "cross-env node src/main/script/build",
+    "---- 自动根据操作系统平台构建包 electron进程环境变量：APP_ENV=production electron-package ----": "---- 自动根据操作系统平台构建包 ----",
+    "pack": "npm run electron:build && cross-env APP_ENV=production APP_ROOT=src/render umi build && electron-builder",
+    "---- 不同接口环境 WEB_ENV=sit  ----": "---- 自动根据操作系统平台构建包 ----",
+    "pack-env-sit": "npm run electron:build && cross-env WEB_ENV=sit APP_ROOT=src/render umi build && electron-builder",
+    "---- 构建三个操作系统平台包 electron-package-all ----": "---- 构建三个操作系统平台包 ----",
+    "pack-all": "npm run electron:build && cross-env APP_ENV=production APP_ROOT=src/render umi build && electron-builder -mwl",
+    "---- 构建 mac 操作系统平台包 electron-package-mac ----": "---- 构建 mac 操作系统平台包 ----",
+    "pack-mac": "npm run electron:build && cross-env APP_ENV=production APP_ROOT=src/render umi build && electron-builder -m",
+    "---- 构建 windows 操作系统平台包 electron-package-windows ----": "---- 构建 windows 操作系统平台包 ----",
+    "pack-windows": "npm run electron:build && cross-env APP_ENV=production APP_ROOT=src/render umi build && electron-builder -w"
+  },
+  "main": "src/main/bundle.js",
+  "build": {
+    "extends": null,
+    "productName": "APP",
+    "appId": "111@qq.com",
+    "directories": {
+      "output": "release/${version}_setup"
+    },
+    "files": [
+      "!node_modules/**/*",
+      "src/main/**/*",
+      "src/main/public",
+      "src/render/dist/**/*"
+    ],
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "artifactName": "${productName}_setup_${version}.${ext}",
+      "icon": "src/main/public/icon.ico"
+    },
+    "publish": [
+      {
+        "provider": "generic",
+        "url": ""
+      }
+    ],
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false
+    }
+  },
+  "dependencies": {
+    "@ant-design/icons": "^4.0.6",
+    "antd": "^4.2.2",
+    "axios": "^0.19.2",
+    "classnames": "^2.2.6",
+    "dayjs": "^1.8.25",
+    "electron-log": "^4.1.1",
+    "js-cookie": "^2.2.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "umi": "3.1.1"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.10",
+    "@types/js-cookie": "^2.2.6",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "@umijs/fabric": "^2.0.8",
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.1.1",
+    "chalk": "^4.0.0",
+    "concurrently": "^5.1.0",
+    "cross-env": "^7.0.2",
+    "electron": "8.2.0",
+    "electron-builder": "^22.5.1",
+    "electron-devtools-installer": "^3.0.0",
+    "electron-is-dev": "^1.2.0",
+    "electron-store": "^5.1.1",
+    "electron-updater": "^4.2.5",
+    "eslint-config-alloy": "^3.7.1",
+    "eslint-plugin-html": "^6.0.2",
+    "eslint-plugin-react": "^7.19.0",
+    "mockjs": "^1.1.0",
+    "prettier": "^1.19.1",
+    "wait-on": "^4.0.2"
+  }
+}

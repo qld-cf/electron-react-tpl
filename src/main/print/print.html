@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>打印</title>
+</head>
+<style>
+    @page {
+        margin: 5mm;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .task-ticket-template {
+        width: 80%;
+        margin: 0 auto;
+        padding: 2em;
+    }
+
+    .task-ticket-table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .task-ticket-table tr {
+        page-break-before: auto;
+    }
+
+    .task-ticket-table td {
+        border: 1px solid #000;
+    }
+</style>
+
+<body>
+    <div id="printContent">
+        hello,world
+    </div>
+</body>
+<script>
+    const { ipcRenderer } = require('electron');
+    const _mockDevice = {
+        pageUrl: 'http://192.168.2.205:8042/cw?defaultLogin=true&deviceCode=8011',
+        deviceName: 'Microsoft Print to PDF'
+    }
+    ipcRenderer.on('print-edit', (event, obj) => {
+        console.log('打印页接收到print-edit', obj);
+        let html = '';
+        html += `<div>${obj.html}</div>`
+        document.body.innerHTML = html;
+        ipcRenderer.send('tagPrint', obj.deviceName);
+        // ipcRenderer.send('do', _mockDevice.deviceName);
+    });
+
+    ipcRenderer.on('webview-print-render', (event, info) => {
+        console.log('webview-print-render')
+        // 执行渲染
+        document.body.innerHTML = info.html
+        ipcRenderer.sendToHost('webview-print-do')
+    })
+
+</script>
+
+</html>

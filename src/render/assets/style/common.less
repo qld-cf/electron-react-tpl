@@ -1,0 +1,192 @@
+/**
+ * 这里写全局公共样式
+ */
+@commonColor: #a14eff;
+@commonBgColor: #eff0fa;
+
+// wrap
+.commonWrap {
+  width: 100%;
+  height: 100%;
+}
+
+.layout-content {
+  padding: 0 0 24px 0;
+  margin: 0px;
+  height: 100%;
+}
+
+.layout-content-withTab {
+  padding: 24px 0;
+  margin: 0px;
+  height: 100%;
+}
+
+.ant-layout {
+  background: @commonBgColor  !important;
+}
+
+// settlement
+.settlement {
+  background: @commonBgColor;
+}
+
+// other
+.mid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.status2 {
+  padding: 5px 10px;
+  background-color: #1890ff;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.bsp {
+  background-color: #1890ff;
+  color: #fff;
+  padding: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.totalNumber {
+  background: #e6f2ff;
+  margin-top: 20px;
+  border: 1px solid #b3e4ff;
+  border-radius: 5px;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 20px;
+}
+
+.mRight10 {
+  margin-right: 10px;
+}
+
+.mRight5 {
+  margin-right: 5px;
+}
+
+.mTop16 {
+  margin-top: 16px;
+}
+
+.mBottom16 {
+  margin-bottom: 16px;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.mRight16 {
+  margin-right: 16px;
+}
+
+.mLeft16 {
+  margin-left: 16px;
+}
+
+// 单行省略号
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wrapStyle {
+  padding: 16px 16px 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+// 组件通用
+.commonHandleBack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+
+  Button:nth-of-type(1) {
+    margin-right: 20px;
+  }
+
+  Button {
+    width: 110px;
+    height: 40px;
+  }
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+// 带左侧标识的 title
+@color-pirmary: #a14eff;
+
+.note-title {
+  position: relative;
+  padding-left: 12px;
+  line-height: 44px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #474245;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 2px;
+    height: 14px;
+    background-color: @color-pirmary;
+    transform: translateY(-50%);
+  }
+}
+
+.note-title-border {
+  .note-title;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #f3f3f3;
+  }
+}
+
+.optionBtnList {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px 0;
+
+  & > li > button {
+    margin-right: 15px;
+  }
+}
+
+.commonWrap{
+  .wrapStyle:nth-of-type(2){
+    min-height: 480px;
+  }
+}
+
+.detailContent{
+  padding: 0 20px 20px 20px;
+  background-color: #fff;
+  height: auto;
+}

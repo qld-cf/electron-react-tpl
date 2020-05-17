@@ -1,0 +1,6 @@
+# 在dev-app-update.yml中配置检查更新的地址，
+# 这个地址为开发环境下的地址
+# 需要放入根目录才能打包运行
+provider: 'generic'
+url: 'http://127.0.0.1:4000/download/'
+channel: 'latest'
