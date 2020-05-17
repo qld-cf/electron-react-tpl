@@ -29,15 +29,15 @@ TODOLIST: 1. Node Api function encapsulation and decoupling business
 
 ### Open
 
-`` `
+```
 npm i
 npm start
 npm run pack
-`` `
+```
 
 
 ### Directory tree
-`` `
+```
 |-project
     |-.editorconfig
     |-.eslintrc.js
@@ -155,7 +155,7 @@ npm run pack
             | |-index.tsx
             |-utils toolset
 
-`` `
+```
 
 ### eslint
 [Alloy] (https://github.com/AlloyTeam/eslint-config-alloy) configuration is enabled by default
@@ -167,7 +167,7 @@ npm run pack
 
 -Local debug logs
 
-`` `js
+```js
 const log = require ('electron-log');
 // log.transports.file.file = 'xx / record.log' local specified file
 // Default log storage
@@ -176,7 +176,7 @@ const log = require ('electron-log');
 // on Windows: user \ AppData \ Roaming \ {appName} \ log.log
 log.info ('Hello, log');
 log.warn ('Some problem appears');
-`` `
+```
 
 ### Precautions
 
