@@ -8,8 +8,9 @@
 3. app启动loading加载条
 4. electron打印(electron 5.0以上支持)
 5. 灰度发布方案
-6. 本地日志
-7. app打包图标
+6. electron-log 本地日志
+7. electron-store 本地存储
+8. app打包图标
 
 TODOLIST:  1. app崩溃信息采集
            2. app消息通知，快捷键等
