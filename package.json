@@ -4,9 +4,8 @@
   "author": "app",
   "version": "0.0.1",
   "scripts": {
-    "start": "npm run electron:build && concurrently \"cross-env APP_ROOT=src/render umi dev\" \"wait-on http://localhost:9090 && electron .\"",
-    "dev:web": "cross-env TARGET=web APP_ROOT=src/render umi dev",
-    "dev:all": "concurrently -n=umi,electron -c=blue,green -p=[{name}] \"cross-env APP_ROOT=src/render umi dev\" \"wait-on http://localhost:9090 && electron .\"",
+    "start": "npm run electron:build && npm run dev && electron .\"",
+    "dev": "concurrently -n=umi,electron -c=blue,green -p=[{name}]  \"cross-env APP_ROOT=src/render umi dev\" \"wait-on http://localhost:9090",
     "build:web": "cross-env APP_ROOT=src/render umi build",
     "---- webpack 构建 bundle.js electron-webpack ----": "---- webpack 构建 bundle.js ----",
     "electron:build": "cross-env node src/main/script/build",
