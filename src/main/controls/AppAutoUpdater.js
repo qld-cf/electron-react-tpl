@@ -39,7 +39,7 @@ function updateHandle(mainWindow) {
   });
   autoUpdater.on('update-available', function (UpdateInfo) {
     log.info('UpdateInfo', UpdateInfo)
-    sendUpdateMessage('检测到新版本，正在下载…',mainWindow)
+    sendUpdateMessage('检测到新版本，正在下载…', mainWindow)
   });
   autoUpdater.on('update-not-available', function (info) {
     log.info(`现在使用的已经是最新版本`)
@@ -69,6 +69,114 @@ function updateHandle(mainWindow) {
       handleGreyUpdate(msg)
     } else { // 无规则 则默认自动更新
       checkForUpdates()
+    }
+  })
+
+
+
+
+  let localresourcePath = ``
+  let resourcePath = ``
+  let appZipPath = ``
+  const remoteAppURL = 'https://yourFileServer/app.zip' // 你的远程文件服务器
+
+
+  if (isElectronDev && process.platform === 'win32') { // windows 本地测试 admin:改为你的用户名
+    // win 本地安装包路径
+    localresourcePath = `C:/Users/admin/AppData/Local/Programs/YOURAPP/resources/app`
+    resourcePath = `C:/Users/admin/AppData/Local/Programs/YOURAPP/resources`
+    appZipPath = `C:/Users/admin/AppData/Local/Programs/YOURAPP/resources/app.zip`
+  }
+  if (!isElectronDev && process.platform === 'win32') { // win平台
+    localresourcePath = `./resources/app`
+    resourcePath = `./resources`
+    appZipPath = `./resources/app.zip`
+  }
+  if (!isElectronDev && process.platform === 'darwin') { // mac平台
+    // YOURAPP改为你的 APP名称(packageJson里的build的productname属性)
+    // if (isElectronDev && process.platform === 'darwin') { // mac平台 local test
+    localresourcePath = `/Applications/YOURAPP.app/Contents/Resources/app`
+    resourcePath = `/Applications/YOURAPP.app/Contents/Resources`
+    appZipPath = `/Applications/YOURAPP.app/Contents/Resources/app.zip`
+  }
+
+  console.log('localresourcePath', localresourcePath)
+  console.log('resourcePath', resourcePath)
+  console.log('appZipPath', appZipPath)
+
+  // 下载远程压缩包并写入指定文件
+  function downloadFile(uri, filename) {
+    const writer = fs.createWriteStream(filename)
+    axios.get(uri, { responseType: 'stream' }).then(res => {
+      res.data.pipe(writer);
+    });
+    return new Promise((resolve, reject) => {
+      writer.on('finish', resolve);
+      writer.on('error', reject);
+    });
+  }
+
+  // 删除文件夹
+  function deleteDirSync(dir) {
+    let files = fs.readdirSync(dir)
+    // eslint-disable-next-line @typescript-eslint/prefer-for-of
+    for (let i = 0;i < files.length;i++) {
+      let newPath = path.join(dir, files[i]);
+      let stat = fs.statSync(newPath)
+      if (stat.isDirectory()) {
+        // 如果是文件夹就递归下去
+        deleteDirSync(newPath);
+      } else {
+        // 删除文件
+        fs.unlinkSync(newPath);
+      }
+    }
+    fs.rmdirSync(dir)// 如果文件夹是空的，删除自身
+  }
+
+  // 增量更新
+  ipcMain.on('checkForPartUpdates', async (e, msg) => {
+    console.log('checkForPartUpdates', msg)
+    // if (isElectronDev) {
+    //   console.log('开发模式不支持')
+    //   return
+    // }
+    try {
+      if (fs.existsSync(`${localresourcePath}.back`)) { // 删除旧备份
+        deleteDirSync(`${localresourcePath}.back`)
+      }
+      if (fs.existsSync(localresourcePath)) {
+        fs.renameSync(localresourcePath, `${localresourcePath}.back`); // 备份目录
+      }
+      await downloadFile(remoteAppURL, appZipPath)
+      console.log('app.asar.unpacked.zip 下载完成')
+      fs.mkdirSync(localresourcePath) // 创建app来解压用
+      try {
+        // 同步解压缩
+        const unzip = new AdmZip(appZipPath)
+        unzip.extractAllTo(resourcePath, true)
+        console.log('app.asar.unpacked.zip 解压缩完成')
+        console.log('更新完成，正在重启...')
+        mainWindow.webContents.send('partUpdateReady')
+        setTimeout(() => {
+          app.relaunch(); // 重启
+          app.exit(0);
+        }, 1800);
+      } catch (error) {
+        console.error(`extractAllToERROR: ${error}`);
+      }
+      // 更新窗口
+      // BrowserWindow.getAllWindows().forEach((win: any) => {
+      //   win.webContents.reload()
+      //   // remote.app.relaunch(); // 重启
+      //   // remote.app.exit(0);
+      // })
+      console.log('webContents reload完成')
+    } catch (error) {
+      console.error(`checkForPartUpdatesERROR`, error)
+      if (fs.existsSync(`${localresourcePath}.back`)) {
+        fs.renameSync(`${localresourcePath}.back`, localresourcePath);
+      }
     }
   })
 
@@ -116,6 +224,6 @@ function handleGreyUpdate(msg) {
 
 
 
-module.exports  = {
+module.exports = {
   updateHandle,
 }

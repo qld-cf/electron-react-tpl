@@ -2,6 +2,15 @@
 
 [English Version](https://github.com/qld-cf/electron-react-tpl/blob/master/README_EN.md)
 
+
+更新日志：
+
+1. 2020-06-14 添加远程增量更新，无需下载包来重新安装更新；
+[中文](https://github.com/qld-cf/electron-react-tpl/blob/master/CHANGE_LOG.md)
+[English Version](https://github.com/qld-cf/electron-react-tpl/blob/master/CHANGE_LOG_EN.md)
+
+
+
 `electron 8.2` + `umi 3.1` + `typescript react 16.12` + `redux` + `antDesign 4.0` + `eslint tslint react-tslint`脚手架, 下载即用，已经为你做好了基座设施
 
 #### 客户端集成:
