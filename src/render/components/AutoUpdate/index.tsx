@@ -88,9 +88,8 @@ const Update = (props: IProps) => {
           <Button type='primary' onClick={() => { ipc && ipc.send('checkForUpdates') }}>
             全量更新
         </Button>
-          <Button type='primary' style={{ marginLeft: 10 }}>
-            <Button type='primary' onClick={() => checkForPartUpdates()} style={{ marginLeft: 10 }}>
-              增量更新
+          <Button type='primary' onClick={() => checkForPartUpdates()} style={{ marginLeft: 10 }}>
+            增量更新
         </Button>
         </div>}
     </div>

@@ -194,4 +194,5 @@ log.warn('Some problem appears');
 1. 下载依赖和打包运行错误，请用cnpm或者配置npm config的electron ERROR路径
 2. 任何地方的component文件夹名不可首字母大写 会被umi识别为路由而影响热加载等
 3. 卡在node install.js : npm config edit 添加：electron_mirror="https://npm.taobao.org/mirrors/electron/"
+4. 下载electron 8.2一直失败，请删除包，然后安装全局的8.2版本的electron即可
 

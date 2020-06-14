@@ -11,6 +11,8 @@ autoUpdater.logger = require("electron-log")
 autoUpdater.logger.transports.file.level = "info"
 const isElectronDev = require('electron-is-dev')
 const path = require('path')
+const axios = require('axios').default;
+const AdmZip = require('adm-zip')
 
 /**
  * 通过main进程发送事件给renderer进程，提示更新信息
