@@ -206,4 +206,8 @@ log.warn('Some problem appears');
 (官方electron文档)[https://www.electronjs.org/docs]
 (官方umi文档)[https://umijs.org/]
 
+###### 能用或者好用麻烦给一颗卑微的星星~谢谢  补充或者建议请提issue
+
+
+
 [github](https://github.com/qld-cf/electron-react-tpl)
