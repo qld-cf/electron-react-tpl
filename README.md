@@ -23,8 +23,8 @@
 - [x] electron-log 本地日志  electron-store 本地存储
 - [x] app打包图标 添加增量更新
 - [x] 添加redux-devtools插件
-- [x] app崩溃信息采集
-- [x] app消息通知，快捷键等
+- [ ] app崩溃信息采集
+- [ ] app消息通知，快捷键等
 
 
 #### web端:
