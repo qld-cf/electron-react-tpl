@@ -17,13 +17,11 @@
 
 #### 客户端集成:
 1. 自动更新(electron-builder)
-2. 托盘菜单
-3. app启动loading加载条
-4. electron打印(electron 5.0以上支持)
-5. electron-log 本地日志
-6. electron-store 本地存储
-7. app打包图标
-8. 添加增量更新
+2. 托盘菜单 app启动loading加载条
+3. electron打印(electron 5.0以上支持)
+4. electron-log 本地日志  electron-store 本地存储
+5. app打包图标 添加增量更新
+6. 添加redux-devtools插件
 
 TODOLIST:
 

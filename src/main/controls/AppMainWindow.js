@@ -50,17 +50,16 @@ module.exports = class AppMainWindow extends BrowserWindow {
     this.loadURL(isDevEnv ? DEV_ADDRESS : `file://${path.join(__dirname, '../render/dist/index.html')}`)
 
     // if (isDevEnv) {
-      // 打开开发者工具
-      this.mainWindow.openDevTools()
+    // 打开开发者工具
+    this.mainWindow.openDevTools()
     // }
-      // 异步安装插件
+    // 异步安装插件
     installExtension(REACT_DEVELOPER_TOOLS)
       .then(name => console.log(`Added Extension REDUX_DEVTOOLS:  ${name}`))
       .catch(err => console.log('An error occurred: ', err))
     installExtension(REDUX_DEVTOOLS)
       .then(name => console.log(`Added Extension REDUX_DEVTOOLS:  ${name}`))
       .catch(err => console.log('An error occurred: ', err))
-
   }
 
   // 主进程加载时的loading过渡，避免白屏
@@ -94,11 +93,6 @@ module.exports = class AppMainWindow extends BrowserWindow {
         e.preventDefault()
         // this.mainWindow.setSkipTaskbar(true)
       }
-
-
-      //   this.mainWindow.hide()
-
-      // }
 
     })
     this.mainWindow.once('ready-to-show', () => { // 加入loading.html后, 此处updateHandle无效
