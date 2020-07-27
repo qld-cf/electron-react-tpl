@@ -19,14 +19,14 @@ http-server -p 4000 // 快速开启本地服务，用于存储更新文件
 // 关闭asar模式
   "asar": false,
 // 打包
-  npm run pack
+  npm run pack-windows
 // 进入打好的windows包
   cd release\0.x.x_setup\win-unpacked\resources
 // 压缩app文件夹 => app.zip, 拷贝app-update.yml和app.zip
 
 ```
 
-3. app.zip传到服务器
+3. app.zip app-update.yml 传到服务器
 
 3. 本地流程，启动客户端，点击增量更新
 
