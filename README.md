@@ -16,17 +16,15 @@
 `electron 8.2` + `umi 3.1` + `typescript react 16.12` + `redux` + `antDesign 4.0` + `eslint tslint react-tslint`脚手架, 下载即用，已经为你做好了基座设施
 
 #### 客户端集成:
-1. 自动更新(electron-builder)
-2. 托盘菜单 app启动loading加载条
-3. electron打印(electron 5.0以上支持)
-4. electron-log 本地日志  electron-store 本地存储
-5. app打包图标 添加增量更新
-6. 添加redux-devtools插件
+- [x] 自动更新(electron-builder)
+- [x] 托盘菜单 app启动loading加载条
+- [x] electron打印(electron 5.0以上支持)
+- [x] electron-log 本地日志  electron-store 本地存储
+- [x] app打包图标 添加增量更新
+- [x] 添加redux-devtools插件
+- [x] app崩溃信息采集
+- [x] app消息通知，快捷键等
 
-TODOLIST:
-
-1. app崩溃信息采集
-2. app消息通知，快捷键等
 
 #### web端:
 1. 基于[umi](https://umijs.org/zh-CN)脚手架，基础配置已集成，开发者关注业务代码编写即可
