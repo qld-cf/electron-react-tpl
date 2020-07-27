@@ -1,5 +1,6 @@
 # electron-react-umi-tpl
 
+[github](https://github.com/qld-cf/electron-react-tpl)
 [English Version](https://github.com/qld-cf/electron-react-tpl/blob/master/README_EN.md)
 
 
@@ -204,3 +205,5 @@ log.warn('Some problem appears');
 
 (官方electron文档)[https://www.electronjs.org/docs]
 (官方umi文档)[https://umijs.org/]
+
+[github](https://github.com/qld-cf/electron-react-tpl)
