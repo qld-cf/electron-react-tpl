@@ -5,9 +5,11 @@
 
 更新日志：
 
-1. 2020-06-14 添加远程增量更新，无需下载包来重新安装更新；
-[中文](https://github.com/qld-cf/electron-react-tpl/blob/master/CHANGE_LOG.md)
-[English Version](https://github.com/qld-cf/electron-react-tpl/blob/master/CHANGE_LOG_EN.md)
+1. 2020-06-08 添加[全量更新](https://segmentfault.com/a/1190000016674982)功能
+2. 2020-06-29 添加[远程增量更新功能](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/PART_UPDATE.md)，无需下载包来重新安装更新；
+3. 2020-07-27 优化初始化客户端loading等待页面，优化页面
+[中文](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/CHANGE_LOG.md)
+[English Version](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/CHANGE_LOG_EN.md)
 
 
 
@@ -18,13 +20,15 @@
 2. 托盘菜单
 3. app启动loading加载条
 4. electron打印(electron 5.0以上支持)
-5. 灰度发布方案
-6. electron-log 本地日志
-7. electron-store 本地存储
-8. app打包图标
+5. electron-log 本地日志
+6. electron-store 本地存储
+7. app打包图标
+8. 添加增量更新
 
-TODOLIST:  1. app崩溃信息采集
-           2. app消息通知，快捷键等
+TODOLIST:
+
+1. app崩溃信息采集
+2. app消息通知，快捷键等
 
 #### web端:
 1. 基于[umi](https://umijs.org/zh-CN)脚手架，基础配置已集成，开发者关注业务代码编写即可
@@ -43,7 +47,10 @@ TODOLIST:  1. node Api功能封装与渲染进程业务解耦
 ```
 npm i
 npm start
-npm run pack
+npm run pack // 默认根据当前系统打包
+npm run pack-mac // 打包mac平台
+npm run pack-windows // 打包windows平台
+npm run pack-all // 打包所有平台
 ```
 
 
@@ -195,4 +202,9 @@ log.warn('Some problem appears');
 2. 任何地方的component文件夹名不可首字母大写 会被umi识别为路由而影响热加载等
 3. 卡在node install.js : npm config edit 添加：electron_mirror="https://npm.taobao.org/mirrors/electron/"
 4. 下载electron 8.2一直失败，请删除包，然后安装全局的8.2版本的electron即可
+5. 最新版本electron也可以尝试，求稳本地用8.2.0
 
+### 参考
+
+(官方electron文档)[https://www.electronjs.org/docs]
+(官方umi文档)[https://umijs.org/]

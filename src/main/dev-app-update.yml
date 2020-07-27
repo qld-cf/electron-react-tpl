@@ -1,4 +1,7 @@
-# 在dev-app-update.yml中配置检查更新的地址，
+# 本地开发测试使用
+
+# 在dev-app-update.yml中配置检查更新的地址(全量更新) electron-builder会根据本地version和服务器yml文件version匹配
+# 如果远程包更新，则拉取后自动安装
 # 这个地址为开发环境下的地址
 # 需要放入根目录才能打包运行
 provider: 'generic'

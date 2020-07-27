@@ -7,6 +7,11 @@ const { app, ipcMain } = require('electron')
 const AppMainWindow = require('./controls/AppMainWindow')
 const AppPrintWindow = require('./print/print')
 const AppTray = require('./controls/AppTray')
+const Store = require('electron-store')
+const store = new Store()
+
+// for test
+store.set('LOCAL_ELECTRON_STORE', 'WELCOME TO MY TPL')
 
 // const devTron = require('devtron')
 // const Store = require('electron-store')

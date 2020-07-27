@@ -17,7 +17,7 @@ const HeaderComponent = (props: any) => {
   return (
     <Header {...headerProps} className='layout-top-eader'>
       <div className='d-flex align-items-center justify-content-between'>
-        <div style={{ marginLeft: 20 }} >hello electron3</div>
+        <div style={{ marginLeft: 20 }} >Hello Electron</div>
       </div>
     </Header>
   )
