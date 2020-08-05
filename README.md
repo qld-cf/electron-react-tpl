@@ -38,6 +38,10 @@
 - 菜单配置 `src/layouts/menu/config.tsx`
 
 
+#### Fix:
+- [x] 升级到electron9.1.0，同步官方
+
+
 TODOLIST:  1. node Api功能封装与渲染进程业务解耦
 
 
