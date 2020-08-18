@@ -26,6 +26,8 @@
 - [x] 添加redux-devtools插件
 - [ ] app崩溃信息采集
 - [ ] app消息通知，快捷键等
+- [ ] 右键复制黏贴
+
 
 
 #### web端:
@@ -35,6 +37,10 @@
 4. iconfont图标
 
 - 菜单配置 `src/layouts/menu/config.tsx`
+
+
+#### Fix:
+- [x] 升级到electron9.1.0，同步官方
 
 
 TODOLIST:  1. node Api功能封装与渲染进程业务解耦
@@ -206,5 +212,9 @@ log.warn('Some problem appears');
 
 (官方electron文档)[https://www.electronjs.org/docs]
 (官方umi文档)[https://umijs.org/]
+
+###### 能用或者好用麻烦给一颗卑微的星星~谢谢  补充或者建议请提issue
+
+
 
 [github](https://github.com/qld-cf/electron-react-tpl)
