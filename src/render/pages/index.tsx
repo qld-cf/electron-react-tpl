@@ -16,7 +16,12 @@ export default function () {
       <AutoUpdate />
       <div className='bigFt'>electron-store</div>
       <div className='bigFt'>
-        <Button onClick={getLocalStoreData} style={{ marginRight: '10px' }}>
+        <Button onClick={() => {
+          store.set('LOCAL_ELECTRON_STORE', `STORE-MSG: i'm the best`)
+          setTimeout(() => {
+            message.success('Set successfully!')
+          }, 300);
+        }} style={{ marginRight: '10px' }}>
           Set store msg | 设置本地storeMsg为: i'm the best
         </Button>
         <Button onClick={getLocalStoreData}>
