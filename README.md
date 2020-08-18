@@ -24,9 +24,9 @@
 - [x] electron-log 本地日志  electron-store 本地存储
 - [x] app打包图标 添加增量更新
 - [x] 添加redux-devtools插件
+- [x] 右键复制黏贴
 - [ ] app崩溃信息采集
 - [ ] app消息通知，快捷键等
-- [ ] 右键复制黏贴
 
 
 
@@ -41,6 +41,7 @@
 
 #### Fix:
 - [x] 升级到electron9.1.0，同步官方
+- [ ] 部分win7白屏解决方案
 
 
 TODOLIST:  1. node Api功能封装与渲染进程业务解耦
