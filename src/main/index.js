@@ -11,7 +11,7 @@ const Store = require('electron-store')
 const store = new Store()
 
 // for test
-store.set('LOCAL_ELECTRON_STORE', 'WELCOME TO MY TPL')
+store.set('LOCAL_ELECTRON_STORE', 'STORE-MSG: WELCOME TO MY TPL')
 
 // const devTron = require('devtron')
 // const Store = require('electron-store')

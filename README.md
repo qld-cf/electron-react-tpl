@@ -9,6 +9,7 @@
 1. 2020-06-08 添加[全量更新](https://segmentfault.com/a/1190000016674982)功能
 2. 2020-06-29 添加[远程增量更新功能](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/PART_UPDATE.md)，无需下载包来重新安装更新；
 3. 2020-07-27 优化初始化客户端loading等待页面，优化页面
+4. 2020-08-18 添加[选中复制右键黏贴功能](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/Copy.md)
 [中文](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/CHANGE_LOG.md)
 [English Version](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/CHANGE_LOG_EN.md)
 

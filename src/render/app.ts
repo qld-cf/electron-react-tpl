@@ -6,10 +6,12 @@ import React from 'react'
 import { history } from 'umi'
 import { ConfigProvider } from 'antd'
 import zhCN from 'antd/es/locale/zh_CN'
-import store from '@utils/ypStore'
-import ypEvent from '@utils/ypRequest/utils/event'
+import RightClickMenuFuc from './utils/rightClickMenuFuc'
 
- // 是否开启app自动更新
+// // 注入右键复制黏贴
+RightClickMenuFuc()
+
+// 是否开启app自动更新
 window.isOpenAutoUpdate = false
 
 // 是否为浏览器环境

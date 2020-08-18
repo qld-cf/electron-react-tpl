@@ -81,7 +81,7 @@ const Update = (props: IProps) => {
   }
   return (
     <div>
-      <div>Version: {appPkgVersion}</div>
+      <div style={{ display: 'flex', justifyContent: 'center', margin: '10px 0' }}>Version: {appPkgVersion}</div>
       {window.isOpenAutoUpdate && <div id="container"></div>}
       {!window.isOpenAutoUpdate &&
         <div>
