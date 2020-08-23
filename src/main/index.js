@@ -17,6 +17,9 @@ store.set('LOCAL_ELECTRON_STORE', 'STORE-MSG: WELCOME TO MY TPL')
 // const Store = require('electron-store')
 
 app.allowRendererProcessReuse = true
+const isWin7 = os.release().startsWith('6.1')
+// win7部分系统白屏优化: 下关闭硬件加速
+if (isWin7) app.disableHardwareAcceleration()
 
 class MainApp {
   constructor() {
