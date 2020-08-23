@@ -9,6 +9,7 @@ const AppPrintWindow = require('./print/print')
 const AppTray = require('./controls/AppTray')
 const Store = require('electron-store')
 const store = new Store()
+const os = require('os')
 
 // for test
 store.set('LOCAL_ELECTRON_STORE', 'STORE-MSG: WELCOME TO MY TPL')
