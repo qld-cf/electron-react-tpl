@@ -24,7 +24,7 @@
   "build": {
     "extends": null,
     "productName": "APP",
-    "appId": "111@qq.com",
+    "appId": "yourAppId",
     "directories": {
       "output": "release/${version}_setup"
     },
