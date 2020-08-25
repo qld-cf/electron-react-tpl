@@ -46,13 +46,13 @@
 #### Fix:
 - [x] 升级到electron9.1.0，同步官方
 - [x] 部分win7白屏解决方案
+- [ ] node Api功能封装与渲染进程业务解耦
+- [ ] 代码优化
 
 
 #### Next Feature
 - [ ] 基于create-react-app的版本
 
-
-TODOLIST:  1. node Api功能封装与渲染进程业务解耦
 
 
 ### 开启
