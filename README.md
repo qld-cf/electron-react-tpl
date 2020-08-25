@@ -52,6 +52,7 @@
 
 #### Next Feature
 - [ ] 基于create-react-app的版本
+- [ ] 添加websocket实现消息通知
 
 
 
