@@ -59,7 +59,7 @@
 ### 开启
 
 ```
-npm i
+npm i // 安装不成功请用yarn
 npm start
 npm run pack // 默认根据当前系统打包
 npm run pack-mac // 打包mac平台
