@@ -10,7 +10,7 @@
 2. 2020-06-29 添加[远程增量更新功能](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/PART_UPDATE.md)，无需下载包来重新安装更新；
 3. 2020-07-27 优化初始化客户端loading等待页面，优化页面
 4. 2020-08-18 添加[选中复制右键黏贴功能](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/Copy.md)
-5. 2020-08-24 优化win7部分系统白屏
+5. 2020-08-24 优化win7部分系统白屏(win7关闭硬件加速)
 
 ---
 
@@ -45,7 +45,11 @@
 
 #### Fix:
 - [x] 升级到electron9.1.0，同步官方
-- [ ] 部分win7白屏解决方案
+- [x] 部分win7白屏解决方案
+
+
+#### Next Feature
+- [ ] 基于create-react-app的版本
 
 
 TODOLIST:  1. node Api功能封装与渲染进程业务解耦
