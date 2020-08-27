@@ -11,6 +11,7 @@
 3. 2020-07-27 优化初始化客户端loading等待页面，优化页面
 4. 2020-08-18 添加[选中复制右键黏贴功能](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/Copy.md)
 5. 2020-08-24 优化win7部分系统白屏(win7关闭硬件加速)
+5. 2020-08-28 添加`koa2 + typescript + websocket + redis + log4js`服务端websocket|redis功能,客户端socket.io
 
 ---
 
@@ -65,6 +66,11 @@ npm run pack // 默认根据当前系统打包
 npm run pack-mac // 打包mac平台
 npm run pack-windows // 打包windows平台
 npm run pack-all // 打包所有平台
+
+// 开启websocket
+
+cd ./server
+npm run dev
 ```
 
 
