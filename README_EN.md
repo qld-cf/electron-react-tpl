@@ -151,7 +151,7 @@ npm run pack
             | |-Home Business
             | |-Edge
             | | |-index.tsx
-            | |-Settings
+            | |-WebSocket
             | |-index.tsx
             |-utils toolset
 

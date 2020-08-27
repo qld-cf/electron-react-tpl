@@ -183,7 +183,7 @@ npm run pack-all // 打包所有平台
             |   |-- Home 业务
             |       |-- Edge
             |       |   |-- index.tsx
-            |       |-- Settings
+            |       |-- WebSocket
             |           |-- index.tsx
             |-- utils 工具集
 

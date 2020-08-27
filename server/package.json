@@ -1,0 +1,39 @@
+{
+  "name": "koa4typescript",
+  "version": "1.0.0",
+  "description": "use ts in koa2",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "nodemon --watch 'src/**/*' -e ts,tsx --exec npm run start ",
+    "start": "tsc && cross-env NODE_ENV=development node dist/server.js",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa",
+    "typescript"
+  ],
+  "author": "chrislee0211",
+  "license": "ISC",
+  "dependencies": {
+    "@types/ioredis": "^4.0.18",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/log4js": "^2.3.5",
+    "@types/socket.io": "^2.1.4",
+    "@types/vfile-message": "^2.0.0",
+    "cross-env": "^6.0.3",
+    "ioredis": "^4.14.1",
+    "koa": "^2.10.0",
+    "koa-bodyparser": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "log4js": "^5.3.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.51",
+    "@types/koa-router": "^7.0.42",
+    "nodemon": "^1.19.4",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  }
+}

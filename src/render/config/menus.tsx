@@ -23,21 +23,21 @@ export interface IMenu {
 }
 
 export default [
-    {
-      title: 'Home',
-      path: '/Home',
-      icon: <IconFont type='icon-RectangleCopy172' />,
-      subs: [
-        {
-          title: 'Settings',
-          path: '/Settings',
-          fullPath: '/Home/Settings'
-        },
-        {
-          title: 'Edge',
-          path: '/Edge',
-          fullPath: '/Home/Edge'
-        }
-      ]
-    }
-    ]as Array<IMenu>
+  {
+    title: 'Home',
+    path: '/Home',
+    icon: <IconFont type='icon-RectangleCopy172' />,
+    subs: [
+      {
+        title: 'WebSocket',
+        path: '/WebSocket',
+        fullPath: '/Home/WebSocket'
+      },
+      {
+        title: 'Edge',
+        path: '/Edge',
+        fullPath: '/Home/Edge'
+      }
+    ]
+  }
+] as Array<IMenu>
