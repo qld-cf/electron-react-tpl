@@ -226,6 +226,12 @@ log.warn('Some problem appears');
 3. 卡在node install.js : npm config edit 添加：electron_mirror="https://npm.taobao.org/mirrors/electron/"
 4. 下载electron 9.1一直失败，请删除包，然后安装全局的9.1版本的electron即可
 5. 最新版本electron也可以尝试，求稳本地用9.1.0
+6. umi版本随着业务量增大，tsx数量暴涨后，热加载效率会变低，可以尝试配置路由而不选用动态路由
+```
+// .umirc.ts
+const routes = [] // 自定义路由，来自src/render/.umi/core/routes.ts
+routes: closeFlexRoute ? routes : undefined,
+```
 
 ### 参考
 
