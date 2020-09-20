@@ -7,11 +7,16 @@
 更新日志：
 
 1. 2020-06-08 添加[全量更新](https://segmentfault.com/a/1190000016674982)功能
+![update](https://cdn.nlark.com/yuque/0/2020/png/2166813/1600571961820-5b9ccc9e-f3dc-46f9-8f4f-5c8dde92fe12.png)
 2. 2020-06-29 添加[远程增量更新功能](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/PART_UPDATE.md)，无需下载包来重新安装更新；
+
+![update1](https://cdn.nlark.com/yuque/0/2020/jpeg/2166813/1600573119535-9fbb6b11-8ad8-4d65-a66d-17cc32ad7732.jpeg)
+
 3. 2020-07-27 优化初始化客户端loading等待页面，优化页面
 4. 2020-08-18 添加[选中复制右键黏贴功能](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/Copy.md)
 5. 2020-08-24 优化win7部分系统白屏(win7关闭硬件加速)
-5. 2020-08-28 添加`koa2 + typescript + websocket + redis + log4js`服务端websocket|redis功能,客户端socket.io
+6. 2020-08-28 添加`koa2 + typescript + websocket + redis + log4js`服务端websocket|redis功能,客户端socket.io
+7. 2020-09-20 新增错误边界识别和处理(js,react爆红页面空白后捕捉记录错误并返回首页,开发模式默认关闭，生产环境开启)
 
 ---
 
@@ -53,7 +58,6 @@
 
 #### Next Feature
 - [ ] 基于create-react-app的版本
-- [ ] 添加websocket实现消息通知
 
 
 
