@@ -10,7 +10,7 @@ export default class ErrorBoundary extends React.PureComponent {
   state = { hasError: false }
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     const errorData = `${error.stack}\n${errorInfo.componentStack}`
-    log.info(errorData)
+    log.error(`ErrorBoundary-${new Date()}: `, errorData)
     if (process.env.NODE_ENV !== 'development') { // 生产环境才开启
       location.href = location.href.includes('index.html') ? `${location.origin}/index.html` : location.origin as string
     }
