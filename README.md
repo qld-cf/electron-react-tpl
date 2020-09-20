@@ -10,7 +10,7 @@
 ![update](https://cdn.nlark.com/yuque/0/2020/png/2166813/1600571961820-5b9ccc9e-f3dc-46f9-8f4f-5c8dde92fe12.png)
 2. 2020-06-29 添加[远程增量更新功能](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/PART_UPDATE.md)，无需下载包来重新安装更新；
 
-![update1](https://cdn.nlark.com/yuque/0/2020/jpeg/2166813/1600571833932-0b2313c8-5dc6-46cd-a5bf-b0cbb984aaf4.jpeg)
+![update1](https://cdn.nlark.com/yuque/0/2020/jpeg/2166813/1600573119535-9fbb6b11-8ad8-4d65-a66d-17cc32ad7732.jpeg)
 
 3. 2020-07-27 优化初始化客户端loading等待页面，优化页面
 4. 2020-08-18 添加[选中复制右键黏贴功能](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/Copy.md)
