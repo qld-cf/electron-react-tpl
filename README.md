@@ -24,7 +24,7 @@
 
 
 
-`electron 9.1` + `umi 3.1` + `typescript react 16.12` + `redux` + `antDesign 4.0` + `eslint tslint react-tslint`脚手架, 下载即用，已经为你做好了基座设施
+`electron 9.1` + `umi 3.2` + `typescript react 16.12` + `redux` + `antDesign 4.0` + `eslint tslint react-tslint`脚手架, 下载即用，已经为你做好了基座设施
 
 #### 客户端集成:
 - [x] 自动更新(electron-builder)
