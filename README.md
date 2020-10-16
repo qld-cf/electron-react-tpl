@@ -16,7 +16,7 @@
 5. 2020-08-24 优化win7部分系统白屏(win7关闭硬件加速)
 6. 2020-08-28 添加`koa2 + typescript + websocket + redis + log4js`服务端websocket|redis功能,客户端socket.io
 7. 2020-09-20 新增错误边界识别和处理(页面中遇到React语法等报错后，自动捕捉记录错误日志，页面返回首页,开发模式默认关闭，生产环境开启)
-8. 2020-10-16 新增 [限制只允许应用单开](https://www.cnblogs.com/ybixian/p/11169027.html)
+8. 2020-10-16 新增 [限制只允许应用单开/单实例](https://www.electronjs.org/docs/api/app#%E4%BA%8B%E4%BB%B6-second-instance)
 
 ---
 
