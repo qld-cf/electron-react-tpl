@@ -15,7 +15,8 @@
 4. 2020-08-18 添加[选中复制右键黏贴功能](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/Copy.md)
 5. 2020-08-24 优化win7部分系统白屏(win7关闭硬件加速)
 6. 2020-08-28 添加`koa2 + typescript + websocket + redis + log4js`服务端websocket|redis功能,客户端socket.io
-7. 2020-09-20 新增错误边界识别和处理(js,react爆红页面空白后捕捉记录错误并返回首页,开发模式默认关闭，生产环境开启)
+7. 2020-09-20 新增错误边界识别和处理(页面中遇到React语法等报错后，自动捕捉记录错误日志，页面返回首页,开发模式默认关闭，生产环境开启)
+8. 2020-10-16 新增 [限制只允许应用单开](https://www.cnblogs.com/ybixian/p/11169027.html)
 
 ---
 
@@ -24,7 +25,7 @@
 
 
 
-`electron 9.1` + `umi 3.2` + `typescript react 16.12` + `redux` + `antDesign 4.0` + `eslint tslint react-tslint`脚手架, 下载即用，已经为你做好了基座设施
+`electron 9.1` + `umi 3.2` + `typescript` + `react 16.12` + `redux` + `antDesign 4.0` + `eslint tslint react-tslint`脚手架, 下载即用，已经为你做好了基座设施
 
 #### 客户端集成:
 - [x] 自动更新(electron-builder)
