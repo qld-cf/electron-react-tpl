@@ -8,16 +8,13 @@ import zhCN from 'antd/es/locale/zh_CN'
 import RightClickMenuFuc from './utils/rightClickMenuFuc'
 import ErrorBoundary from '@/layouts/error'
 
-// // 注入右键复制黏贴
+// 注入右键复制黏贴
 RightClickMenuFuc()
 
-// 是否开启app自动更新
+// 是否开启app自动更新, 默认关闭
 window.isOpenAutoUpdate = false
 
-// 是否为浏览器环境
-const isWeb = process.env.TARGET === 'web'
-
-// 关闭electron的loading
+// 定时器: 关闭electron的loading
 setTimeout(() => window.stopLoading(), 1000)
 
 // 覆写 render

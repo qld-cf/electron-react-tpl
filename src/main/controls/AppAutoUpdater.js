@@ -13,6 +13,7 @@ const isElectronDev = require('electron-is-dev')
 const path = require('path')
 const axios = require('axios').default;
 const AdmZip = require('adm-zip')
+const fs = require('fs')
 
 /**
  * 通过main进程发送事件给renderer进程，提示更新信息
@@ -102,9 +103,9 @@ function updateHandle(mainWindow) {
     appZipPath = `/Applications/YOURAPP.app/Contents/Resources/app.zip`
   }
 
-  console.log('localresourcePath', localresourcePath)
-  console.log('resourcePath', resourcePath)
-  console.log('appZipPath', appZipPath)
+  // console.log('localresourcePath', localresourcePath)
+  // console.log('resourcePath', resourcePath)
+  // console.log('appZipPath', appZipPath)
 
   // 下载远程压缩包并写入指定文件
   function downloadFile(uri, filename) {

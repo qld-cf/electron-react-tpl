@@ -5,13 +5,11 @@
 
 const { app, Menu, Tray } = require('electron')
 const path = require('path')
-
 const trayIcon = `${path.join(__dirname, '/public/tray.png')}`
 
 module.exports = class AppTray {
   constructor(mainWindow) {
     this.mainWindow = mainWindow || null
-
     this.initTray()
   }
 
@@ -33,7 +31,6 @@ module.exports = class AppTray {
         }
       }
     ]
-    console.log('object')
     const contextMenu = Menu.buildFromTemplate(trayMenuTemplate)
     // 设置此图标的上下文菜单
     this.tray.setContextMenu(contextMenu)

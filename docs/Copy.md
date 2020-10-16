@@ -68,3 +68,75 @@ export default RightClickMenuFuc
 
 
 ```
+
+
+# electron-react-umi-tpl change log
+
+### Right click to copy and paste
+
+```
+// app.ts
+
+// Inject right click to copy and paste
+import RightClickMenuFuc from'./utils/rightClickMenuFuc'
+
+RightClickMenuFuc()
+
+```
+
+
+```
+// RightClickMenuFuc.ts
+
+/**
+ * Right click to copy and paste
+ */
+const remote = require('electron').remote;
+const Menu = remote.Menu;
+const MenuItem = remote.MenuItem;
+
+
+const RightClickMenuFuc = () => {
+  /**
+  * Judging that the click area can be edited
+  * @param {*} e
+  */
+  function isEleEditable(e: any): any {
+    if (!e) {
+      return false;
+    }
+    // is the input tag or the contenteditable attribute is true
+    if (e.tagName =='INPUT' || e.contentEditable =='true') {
+      return true;
+    } else {
+      // Query the parent node recursively
+      return isEleEditable(e.parentNode)
+    }
+  }
+
+  const menu = new Menu();
+  menu.append(new MenuItem({ label:'paste', role:'paste' }));
+
+  const menu2 = new Menu();
+  menu2.append(new MenuItem({ label:'copy', role:'copy' }));
+  window.addEventListener('contextmenu', (e) => {// Context listener event
+    e.preventDefault();
+    if (isEleEditable(e.target)) {
+      menu.popup(remote.getCurrentWindow());
+    } else {
+      // Determine that there is text selected
+      let selectText = window.getSelection().toString();
+      if (!!selectText) {
+        menu2.popup(remote.getCurrentWindow());
+      }
+    }
+
+  }, false)
+}
+
+export default RightClickMenuFuc
+
+
+
+
+```

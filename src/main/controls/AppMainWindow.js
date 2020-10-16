@@ -6,13 +6,11 @@
 const { BrowserView, BrowserWindow } = require('electron')
 const isDevEnv = require('electron-is-dev')
 const path = require('path')
-const { autoUpdater } = require('electron-updater')
 const {
   default: installExtension,
   REACT_DEVELOPER_TOOLS,
   REDUX_DEVTOOLS
 } = require('electron-devtools-installer')
-const electronHelper = require('./electron-helper')
 const AppAutoUpdater = require('../controls/AppAutoUpdater')
 const { DEV_ADDRESS } = require('../config/config')
 const log = require('electron-log');
@@ -36,10 +34,8 @@ module.exports = class AppMainWindow extends BrowserWindow {
     }
 
     super(config)
-
     this.mainWindow = this
     this.browserView = null
-
     this.initMainWindow()
     this.initEvents()
   }
@@ -86,6 +82,7 @@ module.exports = class AppMainWindow extends BrowserWindow {
     this.mainWindow.on('close', e => {
       console.log('close windows')
       // mac平台，左上角关闭窗口 = 隐藏窗口
+      // TODO: MAC平台退出优化
       // if (process.platform !== "darwin") {
       if (this.mainWindow['hide'] && this.mainWindow['setSkipTaskbar']) {
         this.mainWindow.hide()
