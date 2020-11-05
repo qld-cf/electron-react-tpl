@@ -5,14 +5,13 @@
 
 const { app, ipcMain } = require('electron')
 const AppMainWindow = require('./controls/AppMainWindow')
-const AppPrintWindow = require('./print/print')
 const AppTray = require('./controls/AppTray')
 const Store = require('electron-store')
 const store = new Store()
 const os = require('os')
 const electronDev = require('electron-is-dev')
 
-// for test
+// 测试用
 store.set('LOCAL_ELECTRON_STORE', 'STORE-MSG: WELCOME TO MY TPL')
 
 // 渲染进程保证node api可用，9.0版本已经默认开启
@@ -25,7 +24,6 @@ if (isWin7) app.disableHardwareAcceleration()
 class MainApp {
   constructor() {
     this.mainWindow = null
-    this.printWindow = null
     this.tray = null
   }
 
@@ -44,7 +42,6 @@ class MainApp {
     this.mainWindow = new AppMainWindow()
     this.createTray()
     electronDev || this.handleKeepSingleApp()
-    // this.createPrintWindow()
   }
 
   handleKeepSingleApp() {
@@ -63,11 +60,6 @@ class MainApp {
         }
       })
     }
-  }
-
-  // 创建打印窗口,默认关闭
-  createPrintWindow() {
-    this.printWindow = new AppPrintWindow(this.mainWindow)
   }
 
   // 生命周期
@@ -89,7 +81,6 @@ class MainApp {
     app.on('before-quit', () => {
       console.log('before-quit')
       this.mainWindow.destoryMainWindow()
-      // this.printWindow.destoryPrintWindow()
     })
   }
 

@@ -136,9 +136,6 @@ npm run dev
         |   |   |-- AppMainWindow.js
         |   |   |-- AppTray.js
         |   |   |-- electron-helper.js
-        |   |-- print 打印
-        |   |   |-- print.html
-        |   |   |-- print.js
         |   |-- public 附件
         |   |   |-- icon.ico
         |   |   |-- icon.png

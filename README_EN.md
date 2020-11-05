@@ -30,7 +30,6 @@ Update log:
 #### Client Integration:
 -[x] Automatic update (electron-builder)
 -[x] The tray menu app starts the loading loading bar
--[x] electron printing (supported by electron 5.0 and above)
 -[x] electron-log local log electron-store local storage
 -[x] App package icon added incremental update
 -[x] Add redux-devtools plugin
@@ -135,9 +134,6 @@ npm run dev
         | | |-- AppMainWindow.js
         | | |-- AppTray.js
         | | |-- electron-helper.js
-        | |-- print print
-        | | |-- print.html
-        | | |-- print.js
         | |--- public attachment
         | | |-- icon.ico
         | | |-- icon.png
