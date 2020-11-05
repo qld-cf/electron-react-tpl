@@ -31,7 +31,6 @@
 #### 客户端集成:
 - [x] 自动更新(electron-builder)
 - [x] 托盘菜单 app启动loading加载条
-- [x] electron打印(electron 5.0以上支持)
 - [x] electron-log 本地日志  electron-store 本地存储
 - [x] app打包图标 添加增量更新
 - [x] 添加redux-devtools插件
