@@ -22,9 +22,7 @@ module.exports = class AppMainWindow extends BrowserWindow {
       height: 716,
       minWidth: 800,
       minHeight: 600,
-      // frame: false,
       autoHideMenuBar: false,
-      // titleBarStyle: 'hidden',
       fullscreen: false,
       webPreferences: {
         nodeIntegration: true,
@@ -44,11 +42,10 @@ module.exports = class AppMainWindow extends BrowserWindow {
     // 必须在主进程塞入文件前配置 loading
     this.windowLoading()
     this.loadURL(isDevEnv ? DEV_ADDRESS : `file://${path.join(__dirname, '../render/dist/index.html')}`)
-
-    // if (isDevEnv) {
-    // 打开开发者工具
-    this.mainWindow.openDevTools()
-    // }
+    if (isDevEnv) {
+      // 打开开发者工具
+      this.mainWindow.openDevTools()
+    }
     // 异步安装插件
     installExtension(REACT_DEVELOPER_TOOLS)
       .then(name => console.log(`Added Extension REDUX_DEVTOOLS:  ${name}`))
@@ -63,10 +60,8 @@ module.exports = class AppMainWindow extends BrowserWindow {
     console.log(`file://${path.join(__dirname, 'loading.html')}`)
     this.browserView = new BrowserView()
     this.mainWindow.setBrowserView(this.browserView)
-
     this.browserView.setBounds({ x: 0, y: 0, width: 1010, height: 716 })
     this.browserView.webContents.loadURL(`file://${path.join(__dirname, 'loading.html')}`)
-
     this.browserView.webContents.on('dom-ready', () => {
       this.mainWindow.show()
     })
@@ -89,7 +84,6 @@ module.exports = class AppMainWindow extends BrowserWindow {
         e.preventDefault()
         // this.mainWindow.setSkipTaskbar(true)
       }
-
     })
     this.mainWindow.once('ready-to-show', () => { // 加入loading.html后, 此处updateHandle无效
       // 检查自动更新

@@ -13,10 +13,8 @@ const electronDev = require('electron-is-dev')
 
 // 测试用
 store.set('LOCAL_ELECTRON_STORE', 'STORE-MSG: WELCOME TO MY TPL')
-
 // 渲染进程保证node api可用，9.0版本已经默认开启
 app.allowRendererProcessReuse = true
-
 // win7部分系统白屏优化: 下关闭硬件加速
 const isWin7 = os.release().startsWith('6.1')
 if (isWin7) app.disableHardwareAcceleration()
@@ -26,7 +24,6 @@ class MainApp {
     this.mainWindow = null
     this.tray = null
   }
-
   init() {
     this.initAppLife()
     this.initIPC()
