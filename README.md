@@ -60,8 +60,29 @@
 - [x] 基于create-react-app的版本
 
 
+### 工具命令行启动
 
-### 开启
+```
+> npm i -g maple-react-cli // 全局安装cli工具
+> maple-react-cli // 初始化
+
+? 请选择您接下来的操作 选择模板类型
+? 选一个项目模板来初始化您的项目~
+✔ electron-react-tpl
+✔ 初始化中..
+✔ 准备拉取代码...
+? 请输入您本地初始化的项目名~ 输入自定义项目名，如project
+✔ 拉取代码成功
+✔ 安装依赖成功~
+? 是否运行项目？ yes
+恭喜~项目启动成功~请稍候...
+```
+
+[cli工具](https://github.com/qld-cf/maple-react-cli)
+
+
+
+### 本地开启
 
 ```
 npm i // 安装不成功请用yarn
@@ -71,7 +92,7 @@ npm run pack-mac // 打包mac平台
 npm run pack-windows // 打包windows平台
 npm run pack-all // 打包所有平台
 
-// 开启websocket
+// 如果需要开启websocket
 
 cd ./server
 npm run dev
