@@ -3,7 +3,7 @@ import { Layout } from 'antd'
 import { useHistory, useLocation, useStore } from 'umi'
 import Header from './header'
 import SideMenu from './menu'
-import store from '@utils/Store/'
+import store from '@utils/store/'
 import styles from './index.less'
 
 const { Content, Sider } = Layout
