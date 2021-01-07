@@ -4,7 +4,7 @@
 [English Version](https://github.com/qld-cf/electron-react-tpl/blob/master/README_EN.md)
 
 
-##### 如果你不习惯用umi版本，而喜欢用基于create-react-app的开放版本的模板，请[戳这里](https://github.com/qld-cf/electron-common-react-tpl)
+##### 如果你不习惯用umi版本，而喜欢用基于create-react-app的开放版本的模板，请[戳这里](https://github.com/qld-cf/electron-common-react-tpl)，无umi更自由，热加载更快
 
 
 更新日志：
