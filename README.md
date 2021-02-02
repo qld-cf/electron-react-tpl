@@ -217,12 +217,6 @@ npm run dev
 
 ```
 
-### eslint
-默认开启[alloy](https://github.com/AlloyTeam/eslint-config-alloy)配置
-`eslint-config-alloy`
-
-
-
 ### log
 
 - 本地调试日志

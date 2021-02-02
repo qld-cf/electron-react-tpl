@@ -4,19 +4,21 @@
 [English Version](https://github.com/qld-cf/electron-react-tpl/blob/master/README_EN.md)
 
 
-##### If you are not used to using the umi version, but prefer to use the template based on the open version of create-react-app, please [poke here](https://github.com/qld-cf/electron-common- react-tpl)
+##### If you are not used to using the umi version, but prefer to use the template based on the open version of create-react-app, please [poke here](https://github.com/qld-cf/electron-common- react-tpl), more freedom without umi, faster hot loading
 
 
 Update log:
 
-1. 2020-06-08 Add [full update](https://segmentfault.com/a/1190000016674982) function
+1. 2020-06-08 add [full update](https://segmentfault.com/a/1190000016674982) function
 2. 2020-06-29 Add [Remote incremental update function](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/PART_UPDATE.md), no need to download the package to restart Install updates;
 3. 2020-07-27 Optimize the initial client loading waiting page, optimize the page
 4. 2020-08-18 Add [select copy right-click and paste function](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/Copy.md)
 5. 2020-08-24 Optimize the white screen of some win7 systems (win7 turns off hardware acceleration)
-6. 2020-08-28 Add `koa2 + typescript + websocket + redis + log4js` server websocket|redis function, client socket.io
+6. 2020-08-28 Add `koa2 + typescript + websocket + redis + log4js` server-side websocket|redis function, client-side socket.io
 7. 2020-09-20 Added error boundary recognition and processing (after reporting errors such as React syntax on the page, the error log is automatically captured and recorded, the page returns to the home page, the development mode is closed by default, and the production environment is turned on)
 8. 2020-10-16 Newly added [Limit only allows application billing/single instance](https://www.electronjs.org/docs/api/app#%E4%BA%8B%E4%BB%B6- second-instance)
+9. 2020-11-05 Fix incremental update problem, optimize some code, remove old version printing, add cli tool command line start
+10. 2021-02-02 fix eslint, tslint issues
 
 ---
 
@@ -25,11 +27,11 @@ Update log:
 
 
 
-ʻElectron 9.1` + ʻumi 3.2` + `typescript` + `react 16.12` + `redux` + ʻantDesign 4.0` + ʻeslint tslint react-tslint` scaffolding, download and use, the base facilities have been prepared for you
+`electron 9.1` + `umi 3.2` + `typescript` + `react 16.12` + `redux` + `antDesign 4.0` + `eslint tslint react-tslint` scaffolding, download and use, the base facilities have been prepared for you
 
 #### Client Integration:
 -[x] Automatic update (electron-builder)
--[x] The tray menu app starts the loading loading bar
+-[x] Tray menu app starts loading loading bar
 -[x] electron-log local log electron-store local storage
 -[x] App package icon added incremental update
 -[x] Add redux-devtools plugin
@@ -52,7 +54,6 @@ Update log:
 -[x] Upgrade to electron9.1.0, sync official
 -[x] Some win7 white screen solutions
 -[] Node Api function encapsulation and rendering process business decoupling
-- [ ] Code optimization
 
 
 #### Next Feature
@@ -97,7 +98,9 @@ cd ./server
 npm run dev
 ```
 
-### Directory Tree
+
+
+### Directory tree
 ```
 |-- project
     |-- .editorconfig
@@ -215,12 +218,6 @@ npm run dev
 
 ```
 
-### eslint
-[Alloy](https://github.com/AlloyTeam/eslint-config-alloy) configuration is enabled by default
-ʻEslint-config-alloy`
-
-
-
 ### log
 
 -Local debug log
@@ -243,7 +240,7 @@ log.warn('Some problem appears');
 3. Stuck in node install.js: npm config edit add: electron_mirror="https://npm.taobao.org/mirrors/electron/"
 4. Download electron 9.1 has been failed, please delete the package, and then install the global version of electron 9.1
 5. You can also try the latest version of electron, and use 9.1.0 for stability.
-6. With the increase in business volume, the hot-loading efficiency of the umi version will become lower after the number of tsx increases. You can try to configure routing instead of dynamic routing
+6. With the increase in business volume, the hot loading efficiency of the umi version will become lower after the number of tsx increases. You can try to configure routing instead of dynamic routing
 ```
 // .umirc.ts
 const routes = [] // Custom routes, from src/render/.umi/core/routes.ts
