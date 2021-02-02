@@ -1,10 +1,3 @@
-/* eslint-disable radix */
-
-/**
- * 通用方法
- */
-
-
 /**
  * url参数查询
  * @param {string} [url=location.search] - url地址
@@ -49,7 +42,7 @@ export function addParams({
   url = decodeURIComponent(url)
   const [hostStr, searchStr] = url.split('?')
   if (url.includes('?')) {
-    const oldParams = {}
+    const oldParams: any = {}
     searchStr.split('&').forEach(val => {
       const newVal = val.split('=')
       oldParams[newVal[0]] = newVal[1]

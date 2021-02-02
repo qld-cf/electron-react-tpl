@@ -1,5 +1,4 @@
 import React from 'react'
-import cls from 'classnames'
 import './home.normal.less'
 import AutoUpdate from '@components/AutoUpdate'
 import { Button, message, Input } from 'antd'
@@ -22,7 +21,7 @@ export default function () {
             message.success('Set successfully!')
           }, 300);
         }} style={{ marginRight: '10px' }}>
-          Set store msg | 设置本地storeMsg为: i'm the best
+          Set store msg | 设置本地storeMsg为: i m the best
         </Button>
         <Button onClick={getLocalStoreData}>
           Get init store data | 获取本地storeMsg

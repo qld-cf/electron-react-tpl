@@ -84,8 +84,9 @@
   "devDependencies": {
     "@types/classnames": "^2.2.10",
     "@types/js-cookie": "^2.2.6",
-    "@typescript-eslint/eslint-plugin": "^2.29.0",
-    "@typescript-eslint/parser": "^2.29.0",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "babel-eslint": "^10.1.0",
     "@umijs/fabric": "^2.0.8",
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.1.1",

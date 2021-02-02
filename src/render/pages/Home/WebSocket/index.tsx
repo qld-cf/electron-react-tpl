@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Card } from 'antd'
-
 import socketIOClient from "socket.io-client";
-
 
 const ENDPOINT = "http://127.0.0.1:3002";
 
@@ -16,7 +14,7 @@ const WebSocket = (props: IProps) => {
     const socket = socketIOClient(ENDPOINT, { transport: ['websocket'] });
     console.log('socket', socket)
     if (socket) {
-      socket.on("FromAPI", data => {
+      socket.on("FromAPI", (data: React.SetStateAction<string>) => {
         setResponse(data);
       });
     }

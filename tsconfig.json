@@ -10,6 +10,7 @@
     "baseUrl": "./",
     "strict": true,
     "allowJs": true,
+    "outDir": "./dist",
     "paths": {
       "@/*": ["src/render/*"],
       "@@/*": ["src/render/.umi/*"],
@@ -20,5 +21,13 @@
       "@pages/*": ["src/render/pages/*"]
     },
     "allowSyntheticDefaultImports": true
-  }
+  },
+  // "include": ["./typings.d.ts"],
+  // "typings": "./typings.d.ts",
+  // "exclude": [
+  //   "node_modules",
+  //   "dist",
+  //   "scripts",
+  //   "build",
+  // ]
 }

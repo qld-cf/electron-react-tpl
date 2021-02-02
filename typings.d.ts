@@ -2,6 +2,12 @@ import { History } from 'umi'
 
 declare module '*.css'
 declare module '*.less'
+
+// declare module '*.module.less' {
+//   const styles: { [className: string]: string }
+//   export default styles
+// }
+
 declare module '*.png'
 declare module '*.jpg'
 declare module '*.jpeg'
@@ -17,7 +23,7 @@ declare global {
 
   interface Window {
     /** 浏览器下开发，关闭 electron 载入动画 */
-    stopLoading: () => void,
+    stopLoading: () => void
     /** 是否开启自动更新 */
     isOpenAutoUpdate: boolean
   }

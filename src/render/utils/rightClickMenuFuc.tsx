@@ -16,7 +16,7 @@ const RightClickMenuFuc = () => {
       return false;
     }
     // 为input标签或者contenteditable属性为true
-    if (e.tagName == 'INPUT' || e.contentEditable == 'true') {
+    if (e.tagName === 'INPUT' || e.contentEditable === 'true') {
       return true;
     } else {
       // 递归查询父节点
@@ -35,8 +35,8 @@ const RightClickMenuFuc = () => {
       menu.popup(remote.getCurrentWindow());
     } else {
       // 判断有文本选中
-      let selectText = window.getSelection().toString();
-      if (!!selectText) {
+      let selectText = window?.getSelection()?.toString();
+      if (selectText) {
         menu2.popup(remote.getCurrentWindow());
       }
     }

@@ -7,7 +7,6 @@ const { Header } = Layout
 
 const headerProps = {
   style: {
-    // backgroundImage: `url(${require('@/assets/image/nav-bg.jpg')})`
     background: '#A14EFF'
   }
 }

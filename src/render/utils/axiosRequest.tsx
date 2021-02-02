@@ -4,7 +4,6 @@
 
 import axios from 'axios'
 
-console.log(process.env.REACT_APP_URL)
 const instance = axios.create({
   baseURL: process.env.REACT_APP_URL,
   timeout: 10000
@@ -36,14 +35,14 @@ instance.interceptors.response.use(
   }
 )
 
-export const getRequest = (url) => {
+export const getRequest = (url: any) => {
   return instance({
     method: 'get',
     url: url
   });
 }
 
-export const postRequest = (url, params) => {
+export const postRequest = (url: any, params: any) => {
   return instance({
     method: 'post',
     url: url,
@@ -57,5 +56,3 @@ export const postRequest = (url, params) => {
     }]
   });
 }
-
-// export default instance

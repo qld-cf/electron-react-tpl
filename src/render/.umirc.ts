@@ -6,16 +6,17 @@ const isProd = process.env.APP_ENV === 'production'
 const resolvePath = dir => path.join(__dirname, dir)
 
 const webpack_dev = config => {
-  return config
-    // .devtool('eval')
-    // .devtool('eval-cheap-source-map') // 是否开启sourceMap
-    .target('electron-renderer')
+  return (
+    config
+      // .devtool('eval-cheap-source-map') // 是否开启sourceMap
+      .target('electron-renderer')
+  )
 }
-const webpack_dev_web = config => { // web端运行localhost:9090 一般不用
+const webpack_dev_web = config => {
+  // web端运行localhost:9090 一般不用
   return config
     .devtool('eval-cheap-source-map')
-    .node
-    .set('fs', 'empty')
+    .node.set('fs', 'empty')
     .set('worker_threads', 'empty')
     .set('electron', 'empty')
     .set('electron-is-dev', 'empty')
@@ -23,31 +24,22 @@ const webpack_dev_web = config => { // web端运行localhost:9090 一般不用
     .set('electron-updater', 'empty')
 }
 const webpack_prod = config => {
-  return config
-    .target('electron-renderer')
+  return config.target('electron-renderer')
 }
 
-// const chainWebpack = config => {
-//   console.log('isProd',isProd)
-//   console.log('isWeb',isWeb)
-
-//   if (isProd) {
-//     return webpack_prod(config)
-//   }
-//   return isWeb ? webpack_dev_web(config) : webpack_dev(config)
-// }
-
 const chainWebpack = config => {
-  return config
-    // .devtool('eval')
-    // .devtool('eval-cheap-source-map') // 是否开启sourceMap
-    .target('electron-renderer')
+  return (
+    config
+      // .devtool('eval-cheap-source-map') // 是否开启sourceMap
+      .target('electron-renderer')
+  )
 }
 
 export default {
   chainWebpack, // 热加载需要
   // 是否编译 node_modules
-  nodeModulesTransform: { // 打包加速
+  nodeModulesTransform: {
+    // 打包加速
     type: 'none'
   },
   // 生成资源带 hash 尾缀
@@ -65,7 +57,7 @@ export default {
     '@link-color': '#A14EFF',
     '@font-family': '"futura-pt", sans-serif',
     '@line-height-base': '1.3',
-    '@border-radius-base': '6px',
+    '@border-radius-base': '6px'
   },
   // 路径别名
   alias: {
@@ -74,5 +66,5 @@ export default {
     '@config': resolvePath('config'),
     '@utils': resolvePath('utils'),
     '@pages': resolvePath('pages')
-  },
+  }
 }
