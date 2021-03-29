@@ -4,15 +4,19 @@
   "author": "app",
   "version": "0.0.1",
   "scripts": {
-    "start": "npm run electron:build && npm run dev",
-    "dev": "concurrently -n=umi,electron -c=blue,green -p=[{name}]  \"cross-env APP_ROOT=src/render umi dev\" \"wait-on http://localhost:9090 && electron .\"",
-    "build:web": "cross-env APP_ROOT=src/render umi build",
+    "start": "npm run dev",
+    "dev": "concurrently -n=umi,electron -c=blue,green -p=[{name}]  \"cross-env APP_ROOT=src/render umi dev\" ",
+    "electron:dev": "node scripts/main-build --env=development --watch",
     "---- webpack 构建 bundle.js electron-webpack ----": "---- webpack 构建 bundle.js ----",
-    "electron:build": "cross-env node src/main/script/build",
+    "electron:build": "node scripts/main-build --env=production",
+    "---- 辅助命令 ----": "---- DIST=dist 指向根目录 dist ----",
+    "build:umi": "cross-env DIST=dist APP_ENV=test APP_ROOT=src/render umi build",
+    "---- close flex routes ----": "---- 开发关闭动态路由，可选 ----",
+    "flex": "concurrently -n=umi,electron -c=blue,green \"cross-env closeFlexRoute=true APP_ENV=test APP_ROOT=src/render umi dev\" \"npm run electron:dev\"",
     "---- 自动根据操作系统平台构建包 electron进程环境变量：APP_ENV=production electron-package ----": "---- 自动根据操作系统平台构建包 ----",
     "pack": "npm run electron:build && cross-env APP_ENV=production APP_ROOT=src/render umi build && electron-builder",
-    "---- 不同接口环境 WEB_ENV=sit  ----": "---- 自动根据操作系统平台构建包 ----",
-    "pack-env-sit": "npm run electron:build && cross-env WEB_ENV=sit APP_ROOT=src/render umi build && electron-builder",
+    "---- 不同接口环境 APP_ENV=test  ----": "---- 自动根据操作系统平台构建包 ----",
+    "pack-env-test": "npm run electron:build && cross-env APP_ENV=test APP_ROOT=src/render umi build && electron-builder",
     "---- 构建三个操作系统平台包 electron-package-all ----": "---- 构建三个操作系统平台包 ----",
     "pack-all": "npm run electron:build && cross-env APP_ENV=production APP_ROOT=src/render umi build && electron-builder -mwl",
     "---- 构建 mac 操作系统平台包 electron-package-mac ----": "---- 构建 mac 操作系统平台包 ----",
@@ -103,6 +107,11 @@
     "eslint-plugin-react": "^7.19.0",
     "mockjs": "^1.1.0",
     "prettier": "^1.19.1",
-    "wait-on": "^4.0.2"
+    "wait-on": "^4.0.2",
+    "dotenv": "^8.2.0",
+    "electron-log": "^4.1.1",
+    "minimist": "^1.2.5",
+    "node-loader": "^0.6.0",
+    "ora": "^4.0.4"
   }
 }
