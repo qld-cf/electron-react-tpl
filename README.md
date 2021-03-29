@@ -22,6 +22,7 @@
 8. 2020-10-16 新增 [限制只允许应用单开/单实例](https://www.electronjs.org/docs/api/app#%E4%BA%8B%E4%BB%B6-second-instance)
 9. 2020-11-05 修复增量更新问题，优化部分代码，移除旧版打印,新增cli工具命令行启动
 10. 2021-02-02 修复eslint, tslint问题
+11. 2021-03-29 新增主进程HRM功能，修改主进程可以重新reload客户端
 
 ---
 
