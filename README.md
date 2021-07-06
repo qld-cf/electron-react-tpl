@@ -10,12 +10,16 @@
 ##### 如果你不习惯用umi版本，而喜欢用基于create-react-app的开放版本的模板，请[戳这里](https://github.com/qld-cf/electron-common-react-tpl)，无umi更自由，热加载更快
 
 
+###### TODO
+1. 加入sqlite本地离线功能
+
+
 更新日志：
 
 1. 2020-06-08 添加[全量更新](https://segmentfault.com/a/1190000016674982)功能
 2. 2020-06-29 添加[远程增量更新功能](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/PART_UPDATE.md)，无需下载包来重新安装更新；
 3. 2020-07-27 优化初始化客户端loading等待页面，优化页面
-4. 2020-08-18 添加[选中复制右键黏贴功能](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/Copy.md)
+4. 2020-08-18 添加[选中复制右键黏贴 ｜ 自定义功能](https://github.com/qld-cf/electron-react-tpl/blob/master/docs/Copy.md)
 5. 2020-08-24 优化win7部分系统白屏(win7关闭硬件加速)
 6. 2020-08-28 添加`koa2 + typescript + websocket + redis + log4js`服务端websocket|redis功能,客户端socket.io
 7. 2020-09-20 新增错误边界识别和处理(页面中遇到React语法等报错后，自动捕捉记录错误日志，页面返回首页,开发模式默认关闭，生产环境开启)
