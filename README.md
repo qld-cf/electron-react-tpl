@@ -7,7 +7,7 @@
 [下载](https://www.yuque.com/docs/share/c453798a-12b3-4eb7-a725-4b960732eab1?#《资源1》)
 
 
-##### 如果你不习惯用umi版本，而喜欢用基于create-react-app的开放版本的模板，请[戳这里](https://github.com/qld-cf/electron-common-react-tpl)，无umi更自由，热加载更快
+##### 如果你不习惯用umi版本，而喜欢用基于create-react-app的开放版本的模板，请[戳这里（待维护）](https://github.com/qld-cf/electron-common-react-tpl)，无umi更自由，热加载更快
 
 
 ###### TODO
