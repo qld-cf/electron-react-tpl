@@ -247,9 +247,8 @@ log.warn('Some problem appears');
 1. 下载依赖和打包运行错误，请用cnpm或者配置npm config的electron ERROR路径
 2. 任何地方的component文件夹名不可首字母大写 会被umi识别为路由而影响热加载等
 3. 卡在node install.js : npm config edit 添加：electron_mirror="https://npm.taobao.org/mirrors/electron/"
-4. 下载electron 9.1一直失败，请删除包，然后安装全局的9.1版本的electron即可
-5. 最新版本electron也可以尝试，求稳本地用9.1.0
-6. umi版本随着业务量增大，tsx数量暴涨后，热加载效率会变低，可以尝试配置路由而不选用动态路由
+4. 下载electron 一直失败，请删除包，然后安装全局的12版本的electron即可
+5. umi版本随着业务量增大，tsx数量暴涨后，热加载效率会变低，可以尝试配置路由而不选用动态路由
 ```
 // .umirc.ts
 const routes = [] // 自定义路由，来自src/render/.umi/core/routes.ts
