@@ -13,7 +13,7 @@ const {
 } = require('electron-devtools-installer')
 const AppAutoUpdater = require('../controls/AppAutoUpdater')
 const { DEV_ADDRESS } = require('../config/config')
-const log = require('electron-log');
+const log = require('electron-log')
 
 module.exports = class AppMainWindow extends BrowserWindow {
   constructor() {
@@ -27,7 +27,9 @@ module.exports = class AppMainWindow extends BrowserWindow {
       webPreferences: {
         nodeIntegration: true,
         webviewTag: true,
-        preload: path.join(__dirname, 'preload.js')
+        preload: path.join(__dirname, 'preload.js'),
+        contextIsolation: false, // required flag
+        enableRemoteModule: true
       }
     }
 
@@ -41,7 +43,9 @@ module.exports = class AppMainWindow extends BrowserWindow {
   initMainWindow() {
     // 必须在主进程塞入文件前配置 loading
     this.windowLoading()
-    this.loadURL(isDevEnv ? DEV_ADDRESS : `file://${path.join(__dirname, '../render/dist/index.html')}`)
+    this.loadURL(
+      isDevEnv ? DEV_ADDRESS : `file://${path.join(__dirname, '../render/dist/index.html')}`
+    )
     if (isDevEnv) {
       // 打开开发者工具
       this.mainWindow.openDevTools()
@@ -76,16 +80,14 @@ module.exports = class AppMainWindow extends BrowserWindow {
 
     this.mainWindow.on('close', e => {
       console.log('close windows')
-      // mac平台，左上角关闭窗口 = 隐藏窗口
-      // TODO: MAC平台退出优化
-      // if (process.platform !== "darwin") {
-      if (this.mainWindow['hide'] && this.mainWindow['setSkipTaskbar']) {
+      // 兼容不同平台关闭
+      if (process.platform === 'win32' && this.mainWindow['hide']) {
         this.mainWindow.hide()
         e.preventDefault()
-        // this.mainWindow.setSkipTaskbar(true)
       }
     })
-    this.mainWindow.once('ready-to-show', () => { // 加入loading.html后, 此处updateHandle无效
+    this.mainWindow.once('ready-to-show', () => {
+      // 加入loading.html后, 此处updateHandle无效
       // 检查自动更新
       // log.info('enter ready-to-show')
     })

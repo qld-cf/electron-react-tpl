@@ -36,7 +36,6 @@ module.exports = class AppTray {
     this.tray.setContextMenu(contextMenu)
     // 单击右下角小图标显示应用
     this.tray.on('click', () => {
-      // mainWindow.show();
       this.mainWindow.isVisible() ? this.mainWindow.hide() : this.mainWindow.show()
       this.mainWindow.isVisible()
         ? this.mainWindow.setSkipTaskbar(false)

@@ -27,6 +27,7 @@
 9. 2020-11-05 修复增量更新问题，优化部分代码，移除旧版打印,新增cli工具命令行启动
 10. 2021-02-02 修复eslint, tslint问题
 11. 2021-03-29 新增主进程HRM功能，修改主进程可以重新reload客户端
+12. 2022-01-19 升级electron版本到12，修复升级引出的问题(过去一年真的很忙..)
 
 ---
 
@@ -258,6 +259,7 @@ routes: closeFlexRoute ? routes : undefined,
 
 (官方electron文档)[https://www.electronjs.org/docs]
 (官方umi文档)[https://umijs.org/]
+(electron9版本升级到12)[https://www.cnblogs.com/mapleChain/p/15823267.html]
 
 ###### 能用或者好用麻烦给一颗卑微的星星~谢谢  补充或者建议请提issue
 
