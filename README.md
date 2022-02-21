@@ -10,9 +10,8 @@
 ##### 如果你不习惯用umi版本，而喜欢用基于create-react-app的开放版本的模板，请[戳这里（待维护）](https://github.com/qld-cf/electron-common-react-tpl)，无umi更自由，热加载更快
 
 
-###### TODO
-1. 加入sqlite本地离线功能；
-2. web+cdn版本，便于web服务器部署；
+##### TODO
+1. web+cdn版本，便于web服务器部署；
 
 
 更新日志：
