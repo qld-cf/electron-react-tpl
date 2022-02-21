@@ -7,7 +7,7 @@
 [下载](https://www.yuque.com/docs/share/c453798a-12b3-4eb7-a725-4b960732eab1?#《资源1》)
 
 
-##### 如果你不习惯用umi版本，而喜欢用基于create-react-app的开放版本的模板，请[戳这里（待维护）](https://github.com/qld-cf/electron-common-react-tpl)，无umi更自由，热加载更快
+##### 相对纯净模板，请[戳这里（待维护）](https://github.com/qld-cf/electron-common-react-tpl)，无umi更自由，热加载更快
 
 
 ##### TODO
@@ -28,7 +28,7 @@
 10. 2021-02-02 修复eslint, tslint问题
 11. 2021-03-29 新增主进程HRM功能，修改主进程可以重新reload客户端
 12. 2022-01-19 升级electron版本到12，修复升级引出的问题(又是瞎忙的一年..)
-13. 2022-01-19 加入本地数据持久化sqlite + sequelize，分支：feature/add_sqlite_20220209
+13. 2022-02-21 加入本地数据持久化sqlite + sequelize，分支：[feature/add_sqlite_20220209](https://github.com/qld-cf/electron-react-tpl/tree/feature/add_sqlite_20220209)
 
 
 ---
