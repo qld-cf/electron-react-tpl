@@ -1,13 +1,13 @@
 /**
  * 主进程 webpack 配置
  */
-const path = require('path');
+const path = require('path')
 
 const resolve = (dir = '') => path.join(__dirname, '../src/main', dir) // 指向 src/main
 
-module.exports = function (env) {
-  process.env.NODE_ENV = env;
-  const isDev = env === 'development';
+module.exports = function(env) {
+  process.env.NODE_ENV = env
+  const isDev = env === 'development'
 
   return {
     mode: isDev ? 'development' : 'production',
@@ -16,7 +16,7 @@ module.exports = function (env) {
     entry: resolve('index.js'),
     output: {
       path: resolve(),
-      filename: 'bundle.js',
+      filename: 'bundle.js'
     },
     node: {
       __dirname: false,
@@ -25,9 +25,17 @@ module.exports = function (env) {
     resolve: {
       extensions: ['.js', '.json', '.ts'],
       alias: {
-        '@root': path.join(__dirname, '..'),
-      },
+        '@root': path.join(__dirname, '..')
+      }
     },
+    externals: [
+      'pg-hstore',
+      'sqlite3',
+      'pg',
+      {
+        sequelize: 'require("sequelize")'
+      }
+    ],
     module: {
       rules: [
         {
@@ -35,17 +43,19 @@ module.exports = function (env) {
           exclude: /node-modules/,
           loader: 'babel-loader',
           options: {
-            plugins: ["@babel/plugin-transform-typescript"],
-          },
+            plugins: ['@babel/plugin-transform-typescript']
+          }
         },
         {
           test: /\.node$/,
           loader: isDev ? 'node-loader' : 'relative-loader',
-          options: isDev ? undefined : {
-            relativePath: '/aclas-addons/'
-          }
-        },
+          options: isDev
+            ? undefined
+            : {
+                relativePath: '/aclas-addons/'
+              }
+        }
       ]
     }
-  };
-};
+  }
+}

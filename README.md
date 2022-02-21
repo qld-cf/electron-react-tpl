@@ -11,7 +11,6 @@
 
 
 ###### TODO
-1. 加入sqlite本地离线功能；
 2. web+cdn版本，便于web服务器部署；
 
 
@@ -29,6 +28,7 @@
 10. 2021-02-02 修复eslint, tslint问题
 11. 2021-03-29 新增主进程HRM功能，修改主进程可以重新reload客户端
 12. 2022-01-19 升级electron版本到12，修复升级引出的问题(又是瞎忙的一年..)
+12. 2022-02-10 接入sqlite+sequelize本地离线持久化存储方案,可切到分支feature/add_sqlite_20220209查看细节；
 
 ---
 
@@ -46,6 +46,7 @@
 - [x] app打包图标 添加增量更新
 - [x] 添加redux-devtools插件
 - [x] 右键复制黏贴
+- [x] 本地离线持久化存储
 - [ ] app崩溃信息采集
 - [ ] app消息通知，快捷键等
 
@@ -61,7 +62,7 @@
 
 
 #### Fix:
-- [x] 升级到electron9.1.0，同步官方
+- [x] 升级到electron12，同步官方
 - [x] 部分win7白屏解决方案
 - [ ] node Api功能封装与渲染进程业务解耦
 
@@ -249,6 +250,7 @@ log.warn('Some problem appears');
 3. 卡在node install.js : npm config edit 添加：electron_mirror="https://npm.taobao.org/mirrors/electron/"
 4. 下载electron 一直失败，请删除包，然后安装全局的12版本的electron即可
 5. umi版本随着业务量增大，tsx数量暴涨后，热加载效率会变低，可以尝试配置路由而不选用动态路由
+6. sqlite安装不成功，尝试npm run rebuild
 ```
 // .umirc.ts
 const routes = [] // 自定义路由，来自src/render/.umi/core/routes.ts
@@ -260,6 +262,7 @@ routes: closeFlexRoute ? routes : undefined,
 (官方electron文档)[https://www.electronjs.org/docs]
 (官方umi文档)[https://umijs.org/]
 (electron9版本升级到12)[https://www.cnblogs.com/mapleChain/p/15823267.html]
+- [Sequelize Docs](https://sequelize.org/master/)
 
 ###### 能用或者好用麻烦给一颗卑微的星星~谢谢  补充或者建议请提issue
 
@@ -272,3 +275,4 @@ routes: closeFlexRoute ? routes : undefined,
 
 ![update](https://cdn.nlark.com/yuque/0/2020/png/2166813/1600571961820-5b9ccc9e-f3dc-46f9-8f4f-5c8dde92fe12.png)
 ![update1](https://cdn.nlark.com/yuque/0/2020/jpeg/2166813/1600573119535-9fbb6b11-8ad8-4d65-a66d-17cc32ad7732.jpeg)
+

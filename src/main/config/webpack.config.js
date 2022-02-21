@@ -1,7 +1,7 @@
 /**
  * electron web端编译配置
  */
-const path = require('path');
+const path = require('path')
 
 const pathResolve = (dir = '') => path.join(__dirname, '..', dir) // 指向 src/main
 
@@ -12,7 +12,7 @@ module.exports = {
   entry: pathResolve('index.js'),
   output: {
     path: pathResolve(),
-    filename: 'bundle.js',
+    filename: 'bundle.js'
   },
   node: {
     __dirname: false,
@@ -21,12 +21,20 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.ts', '.tsx', '.jsx', '.json']
   },
+  externals: [
+    'pg-hstore',
+    'sqlite3',
+    'pg',
+    {
+      sequelize: 'require("sequelize")'
+    }
+  ],
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node-modules/
-      },
+      }
     ]
   }
-};
+}

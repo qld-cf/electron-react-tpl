@@ -10,6 +10,8 @@ const Store = require('electron-store')
 const store = new Store()
 const os = require('os')
 const electronDev = require('electron-is-dev')
+const { sequelize } = require('./sequelize')
+const { getAllUsers, createUser } = require('./sqlite-model/user')
 
 // 测试用
 store.set('LOCAL_ELECTRON_STORE', 'STORE-MSG: WELCOME TO MY TPL')
@@ -63,6 +65,14 @@ class MainApp {
   initAppLife() {
     app.whenReady().then(() => {
       this.createMainWindow()
+      sequelize
+        .authenticate()
+        .then(() => {
+          console.log('Connection has been established successfully.')
+        })
+        .catch(err => {
+          console.error('Unable to connect to the database:', err)
+        })
     })
 
     app.on('window-all-closed', () => {
@@ -86,6 +96,19 @@ class MainApp {
     // 关闭启动loading层, 移除loading view视图
     ipcMain.on('stop-loading-main', () => {
       this.mainWindow.removeView()
+    })
+    // sqlite 同步用户数据到渲染进程
+    ipcMain.on('sync-user-info', async () => {
+      const allUsers = await getAllUsers()
+      this.mainWindow.webContents.send('send-user-info', allUsers)
+    })
+    // sqlite 同步用户数据到渲染进程
+    ipcMain.on('set-user-name', async (event, args) => {
+      await createUser({
+        firstName: args,
+        lastName: args,
+        id: parseInt(Math.random() * 1000000, 10)
+      })
     })
   }
 }
