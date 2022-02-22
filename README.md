@@ -263,7 +263,7 @@ routes: closeFlexRoute ? routes : undefined,
 (官方umi文档)[https://umijs.org/]
 (electron9版本升级到12)[https://www.cnblogs.com/mapleChain/p/15823267.html]
 
-###### 能用或者好用麻烦给一颗卑微的星星~谢谢  补充或者建议请提issue
+###### 能提供开发思路或者学习的话，麻烦给一颗卑微的星星star~谢谢  补充或者建议请提issue
 
 
 
